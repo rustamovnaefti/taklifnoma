@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2566">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">// To'y kuni</p>
+<p class="p1">const weddingDate = new Date("November 11, 2024 15:00:00").getTime();</p>
+<p class="p2"><br></p>
+<p class="p1">// Hisoblagichni har soniyada yangilab turish</p>
+<p class="p1">const countdown = setInterval(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const now = new Date().getTime();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const timeLeft = weddingDate - now;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Kunni, soatni, daqiqani va soniyani hisoblash</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// HTML elementlariga natijani joylashtirish</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("days").innerHTML = days;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("hours").innerHTML = hours;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("minutes").innerHTML = minutes;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("seconds").innerHTML = seconds;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Agar vaqt tugagan bo'lsa, hisoblagich to'xtaydi</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (timeLeft &lt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>clearInterval(countdown);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("countdown").innerHTML = "The wedding has started!";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">}, 1000);</p>
+</body>
+</html>
